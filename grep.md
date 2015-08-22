@@ -252,37 +252,41 @@ sed在执行完命令后默认打印模式空间的内容，既然如此，那�
 
 5、把模式空间内容写到文件中（w命令）
 命令w可以把当前模式空间的内容保存到文件中。默认情况下模式空间的内容每次都会打印到标准输出，如果要把输出保存到文件同时不显示到屏幕上，还需要使用-n选项。
-把employmee.txt的内容保存到output.txt，同时显示在屏幕上：
-[root@cxp ~]# sed 'w output.txt'  employee.txt 
-101,John Doe,CEO
-102,Jason Smith,IT Manager
-103,Raj Reddy,Sysadmin
-104,Anand Ram,Developer
-105,Jane Miller,Sales Manager
 
-[root@cxp ~]# cat  output.txt 
-101,John Doe,CEO
-102,Jason Smith,IT Manager
-103,Raj Reddy,Sysadmin
-104,Anand Ram,Developer
-105,Jane Miller,Sales Manager
+把employmee.txt的内容保存到output.txt，同时显示在屏幕上：
+
+    [root@cxp ~]# sed 'w output.txt'  employee.txt 
+    101,John Doe,CEO
+    102,Jason Smith,IT Manager
+    103,Raj Reddy,Sysadmin
+    104,Anand Ram,Developer
+    105,Jane Miller,Sales Manager
+    
+    [root@cxp ~]# cat  output.txt 
+    101,John Doe,CEO
+    102,Jason Smith,IT Manager
+    103,Raj Reddy,Sysadmin
+    104,Anand Ram,Developer
+    105,Jane Miller,Sales Manager
 
 把employmee.txt的内容保存到output.txt，同时不显示在屏幕上：
-[root@cxp ~]# sed  -n 'w output.txt'  employee.txt
-#空行
+    
+    [root@cxp ~]# sed  -n 'w output.txt'  employee.txt
+    #空行
 
 只保存第2行：
-[root@cxp ~]# sed '2 w output.txt' employee.txt 
-101,John Doe,CEO
-102,Jason Smith,IT Manager
-103,Raj Reddy,Sysadmin
-104,Anand Ram,Developer
-105,Jane Miller,Sales Manager
-
-[root@cxp ~]# cat  output.txt 
-102,Jason Smith,IT Manager
-
-#其他情况依此类推
+    
+    [root@cxp ~]# sed '2 w output.txt' employee.txt 
+    101,John Doe,CEO
+    102,Jason Smith,IT Manager
+    103,Raj Reddy,Sysadmin
+    104,Anand Ram,Developer
+    105,Jane Miller,Sales Manager
+    
+    [root@cxp ~]# cat  output.txt 
+    102,Jason Smith,IT Manager
+    
+    #其他情况依此类推
 
 ## 6、sed替换命令 ##
 
